@@ -1,0 +1,389 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define DATO_ACCION 1
+#define SIN_MEMORIA 0
+/*DECLARACION DE TIPOS*/
+typedef struct
+{
+    long dni;
+    char nombre[20];
+}t_etiqueta;
+typedef struct s_nodo_arbol
+{
+   t_etiqueta etiq;
+   struct  s_nodo_arbol *pder;
+   struct s_nodo_arbol *pizq;
+}t_nodo_arbol;
+
+typedef int datoAccion;
+typedef t_nodo_arbol * t_arbol;
+
+typedef int (*t_accion)(void *,int);
+typedef int (*t_cmp)(const void*,const void*);
+/*FIN DE LA DECLARACION DE TIPOS*/
+
+/*FUNCIONES INTERNAS*/
+int Comp(const void*d1,const void* d2)
+{
+    t_nodo_arbol* dato1=(t_nodo_arbol*)d1;
+    t_nodo_arbol* dato2=(t_nodo_arbol*)d2;
+    return dato1->etiq.dni-dato2->etiq.dni;
+}
+void accion1(t_etiqueta* datox,int accion)
+{
+    printf("%ld  %s\n",datox->dni,datox->nombre);
+}
+/*FIN DE FUNCIONES INTERNAS*/
+
+/*PROTOTIPOS*/
+t_arbol * BuscarNodo(const t_arbol* pa,const t_etiqueta *dato,t_cmp Comp);
+t_nodo_arbol** menor(t_arbol* a);
+t_nodo_arbol** mayor(t_arbol* a);
+/*FIN DE PROTOTIPOS*/
+int main()
+{
+    int d;
+    t_arbol arbol1;
+    t_etiqueta dato;
+    char opc;
+    printf("FUNCION DE PUEVA DE ARBOL!\n");
+    getchar();
+    system("cls");
+
+
+
+
+     do
+        {
+            printf("**********MENU DE ARBOL************\n");
+            printf("***********************************\n");
+            printf("1-Crear Arbol\n");
+            printf("2-Eliminar dato\n");
+            printf("3-Vaciar arbol\n");
+            printf("4-Insertar en el arbol\n");
+            printf("5-Buscar dato\n");
+            printf("6-Mostrar Arbol\n");
+            printf("7-Arbol lleno\n");
+            printf("8-Arbol vacio\n");
+            printf("9-Actualizar dato\n");
+            printf("a-Salir\n");
+
+            printf("***********************************\n");
+            printf("ingrese su opcion: ");
+            fflush(stdin);
+            scanf("%c",&opc);
+
+            switch(opc)
+            {
+            case '1':
+                {
+                    crearArbol(&arbol1);
+                    printf("se creo correctamente el arbol \n");
+                }break;
+            case '2':
+                {
+                    printf("ingrese dni: ");
+                    fflush(stdin);
+                    scanf("%ld",&dato.dni);
+
+                    if(eliminarDeArbol(&arbol1,&dato,Comp))
+                    {
+                        printf("El dato eliminado es :  \n\n");
+                         accion1(&dato,DATO_ACCION);
+                    }
+                    else
+                        printf("no se pudo eliminar el dato\n\n");
+
+                }break;
+            case '3':
+               {
+
+                vaciarArbol(&arbol1);
+                printf("El arbol fue vaciado correctamente\n");
+                }break;
+            case '4':
+                {
+                    printf("Ingrese dni: ");
+                    fflush(stdin);
+                    scanf("%ld",&dato.dni);
+                    printf("Ingrese nombre: ");
+                    fflush(stdin);
+                    gets(dato.nombre);
+                    if(insertarEnArbol(&arbol1,&dato,Comp))
+                        printf("se inserto correctamente el dato\n\n");
+                    else
+                         printf("NO se insertar el dato\n");
+                }break;
+            case '5':
+                {
+
+                    printf("ingrese dni: ");
+                    fflush(stdin);
+                    scanf("%ld",&dato.dni);
+                     if(BuscarEnArbol(&arbol1,&dato,Comp))
+                       accion1(&dato,DATO_ACCION);
+                     else
+                        printf("no se encontro el dato \n\n");
+                }break;
+            case '6':
+                {
+                    printf("*******ARBOL********\n");
+                    MostrarArbol(&arbol1);
+                }break;
+            case '7':
+                {
+                    if(ArbolLleno(&arbol1))
+                        printf("el arbol esta lleno \n\n");
+                    else
+                        printf("el arbol NO esta lleno \n\n");
+                }break;
+            case '8':
+                {
+                    if(arbolVacio(&arbol1))
+                        printf("el arbol esta vacio\n");
+                    else
+                        printf("el arbol NO esta vacio \n");
+
+
+                }break;
+            case '9':
+                {
+                    printf("Ingrese dni: ");
+                    fflush(stdin);
+                    scanf("%ld",&dato.dni);
+                    printf("Ingrese nombre: ");
+                    fflush(stdin);
+                    gets(dato.nombre);
+
+                   if( actualizarDato(&arbol1,&dato,Comp))
+                   {
+                        printf("Dato actualizado:  ");
+                        accion1(&dato,DATO_ACCION);
+                   }
+                   else
+                       printf("No se encontro dato \n ");
+                }break;
+
+
+            }
+
+
+
+        }while(opc!='a');
+
+
+    return 0;
+}
+/*FUNCION INTERNA PARA PRIMITIVAS*/
+
+/*FIN DE FUNCION INTERNAS PARA LAS PRIMITIVAS*/
+void RecorrerArbolPre(t_arbol* pa,t_accion accion1)
+{
+    if(!*pa)
+        return;
+
+    accion1(&(*pa)->etiq,DATO_ACCION);
+    RecorrerArbolPre(&(*pa)->pizq,accion1);
+    RecorrerArbolPre(&(*pa)->pder,accion1);
+
+}
+void RecorrerArbolPos(t_arbol* pa,t_accion accion1)
+{
+    if(!*pa)
+        return;
+
+    RecorrerArbolPos(&(*pa)->pizq,accion1);
+    RecorrerArbolPos(&(*pa)->pder,accion1);
+    accion1(&(*pa)->etiq,DATO_ACCION);
+}
+void RecorrerArbolOrden(t_arbol* pa,t_accion accion1)
+{
+    if(!*pa)
+        return;
+    RecorrerArbolOrden(&(*pa)->pizq,accion1);
+    accion1(&(*pa)->etiq,DATO_ACCION);
+    RecorrerArbolOrden(&(*pa)->pder,accion1);
+}
+/*PRIMITIVAS DE AARBOL*/
+void crearArbol(t_arbol* arbol)
+{
+    *arbol=NULL;
+}
+void vaciarArbol(t_arbol* pa)
+{
+    if(!*pa)
+    return;
+    vaciarArbol(&(*pa)->pizq);//voy por la izquierda hsta que encuentro un nulo
+    vaciarArbol(&(*pa)->pder);//voy por derecha hastq q enecuentro un nulo
+    free(*pa);
+    *pa=NULL;
+    return;
+
+}
+int ArbolLleno(t_arbol* pa)
+{
+    t_nodo_arbol *nodo=(t_nodo_arbol*)malloc(sizeof(t_nodo_arbol));
+
+    free(nodo);
+
+    if(!nodo)
+        return 1;
+    return 0;
+}
+int arbolVacio(t_arbol* pa)
+{
+    return *pa==NULL;
+}
+
+int BuscarEnArbol(const t_arbol* pa, t_etiqueta *dato,t_cmp Comp)
+{
+    int comp;
+
+    if(!*pa)
+        return 0;
+    comp=Comp(dato,&(*pa)->etiq);
+    if(comp==0)
+        {*dato=(*pa)->etiq;
+        return 1;
+        }
+
+    if(comp<0)
+      return  BuscarEnArbol(&(*pa)->pizq,dato,Comp);
+    else
+       return  BuscarEnArbol(&(*pa)->pder,dato,Comp);
+
+
+
+}
+int eliminarDeArbol(t_arbol* pa,t_etiqueta* dato,t_cmp Comp)
+{
+  t_arbol *elim=BuscarNodo(pa,dato,Comp);
+
+
+  if(elim==NULL)
+    return 0;
+  *dato=(*elim)->etiq;
+  eliminarNodo(elim);
+  return 1;
+}
+t_arbol * BuscarNodo(const t_arbol* pa,const t_etiqueta *dato,t_cmp Comp)
+{
+    int cmp;
+     if(!*pa)
+        return NULL;
+
+     cmp=Comp(dato,&(*pa)->etiq);
+     if(cmp==0)
+        return pa;
+     if(cmp<0)
+       return BuscarNodo(&(*pa)->pizq,dato,Comp);
+    else
+       return BuscarNodo(&(*pa)->pder,dato,Comp);
+}
+
+void eliminarNodo(t_nodo_arbol** elim)
+{
+    int hi,hd;
+    t_nodo_arbol** elim2;
+    if((*elim)->pizq==NULL&&(*elim)->pder==NULL)//estoy en una hoja
+    {
+        free(elim);
+        *elim=NULL;
+        return;
+    }
+
+    hi=altura(&(*elim)->pizq);
+    hd=altura(&(*elim)->pder);
+
+    if(hi>hd)
+        elim2=mayor(&(*elim)->pizq);
+    else
+        elim2=menor(&(*elim)->pder);
+
+    (*elim)->etiq=(*elim2)->etiq;
+
+    eliminarNodo(elim2);
+}
+int altura(const t_arbol* a)
+{
+    int hi,hd;
+   if(!*a)
+    return 0;
+
+    hi=altura(&(*a)->pizq);
+    hd=altura(&(*a)->pder);
+
+     return (hi>hd?hi:hd)+1;
+}
+
+t_nodo_arbol** menor(t_arbol* a)
+{
+    if(!(*a)->pizq)
+        return a;
+    return menor(&(*a)->pizq);
+}
+t_nodo_arbol** mayor(t_arbol* a)
+{
+       if(!(*a)->pder)
+        return a;
+    return mayor(&(*a)->pder);
+}
+
+ int insertarEnArbol(t_arbol* a,const t_etiqueta* dato,t_cmp Comp)
+ {
+     int cmp;
+
+     if(!*a)
+     {
+         *a=(t_nodo_arbol*)malloc(sizeof(t_nodo_arbol));
+         if(!*a)
+            return SIN_MEMORIA;/*arbol lleno*/
+         (*a)->etiq=*dato;
+         (*a)->pder=NULL;
+         (*a)->pizq=NULL;
+         return 1;
+     }else
+   {
+
+    cmp= Comp(dato,&(*a)->etiq);
+
+     if(cmp==0)
+        return 0;/*DUPLICADO*/
+
+     if(cmp<0)
+      return  insertarEnArbol(&(*a)->pizq,dato,Comp);
+     else
+       return  insertarEnArbol(&(*a)->pder,dato,Comp);}
+
+ }
+ void MostrarArbol(t_arbol* a,t_accion accion1)
+ {
+     if(*a)
+       {
+
+        MostrarArbol(&(*a)->pizq,accion1);
+        printf("%ld %s\n",(*a)->etiq.dni,(*a)->etiq.nombre);
+        MostrarArbol(&(*a)->pder,accion1);
+       }
+
+
+ }
+
+int actualizarDato(t_arbol* a,t_etiqueta* dato,t_cmp Comp)
+{
+    int cmp;
+   if(!*a)
+    return 0;
+
+   cmp=Comp(dato,&(*a)->etiq);
+   if(cmp==0)
+       {
+       (*a)->etiq=*dato;
+       return 1;
+       }
+
+   if(cmp<0)
+    return actualizarDato(&(*a)->pizq,dato,Comp);
+   else
+    return actualizarDato(&(*a)->pder,dato,Comp);
+}
