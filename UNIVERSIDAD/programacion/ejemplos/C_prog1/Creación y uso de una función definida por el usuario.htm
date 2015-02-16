@@ -1,0 +1,654 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0045)http://www.mis-algoritmos.com/source-420.html -->
+<?xml version="1.0"?><HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Creación y uso de una función definida por el usuario</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META 
+content="Creación y uso de una función definida por el usuario, Calcula el area de un triangulo, Definición de Algoritmo" 
+name=description>
+<META 
+content="ejemplos, pascal, turbo pascal, c, turbo c, free pascal, Algoritmo, definicion, concepto, Algorithm" 
+name=keywords>
+<META content="MSHTML 6.00.2800.1400" name=GENERATOR>
+<META content="index, follow" name=robots><LINK 
+href="http://www.mis-algoritmos.com/images/favicon.ico" 
+rel="shortcut icon"><LINK 
+href="Creación y uso de una función definida por el usuario_archivos/template_css.css" 
+type=text/css rel=stylesheet><LINK href="css/template_css.css" type=text/css 
+rel=stylesheet><LINK href="http://www.mis-algoritmos.com/images/favicon.ico" 
+rel="shortcut icon"><LINK 
+href="Creación y uso de una función definida por el usuario_archivos/style.css" 
+rel=stylesheet></HEAD>
+<BODY>
+<DIV style="DISPLAY: none; POSITION: absolute"><IMG 
+src="Creación y uso de una función definida por el usuario_archivos/loading1.gif"><IMG 
+src="Creación y uso de una función definida por el usuario_archivos/loading2.gif"><IMG 
+src="Creación y uso de una función definida por el usuario_archivos/loading3.gif"></DIV><!--[if IE]>
+<DIV 
+style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; COLOR: #ffffff; PADDING-TOP: 10px; BACKGROUND-COLOR: #000000">
+<DIV style="FLOAT: right">
+<SCRIPT type=text/javascript><!--
+        google_ad_client = "pub-2927372561163152";
+        google_ad_width = 125;
+        google_ad_height = 125;
+        google_ad_format = "125x125_as_rimg";
+        google_cpa_choice = "CAAQ7dvnzwEaCK3qHTlmuk6rKMO393M";
+        //--></SCRIPT>
+
+<SCRIPT 
+src="Creación y uso de una función definida por el usuario_archivos/show_ads.js" 
+type=text/javascript>
+        </SCRIPT>
+</DIV><SPAN 
+style="FONT: 20px/40px tahoma; WIDTH: 800px; COLOR: #ffffff"><B>No</B> utilice 
+<A style="COLOR: #40a9ff" 
+href="http://www.mis-algoritmos.com/content/view/12/26/">Internet 
+Explorer</A>!</SPAN><BR><SPAN style="COLOR: #f7f7f7"><SPAN 
+class=highlight>Mejore su experiencia</SPAN> navegando, instale Firefox, que no 
+solo es mas rápido, sino mejor<BR></SPAN>
+<UL type=square>
+  <LI><SPAN style="COLOR: #ffffff">Navegación con pestañas</SPAN> 
+  <LI><SPAN style="COLOR: #ffffff">Bloqueador de Popup</SPAN> 
+  <LI><SPAN style="COLOR: #ffffff">Toolbar de Google</SPAN> 
+  <LI><SPAN style="COLOR: #ffffff">Personalízable</SPAN> 
+  <LI><SPAN style="COLOR: #ffffff">Buscador integrado</SPAN> 
+  <LI><SPAN style="COLOR: #ffffff"><A style="COLOR: #40a9ff" 
+  href="http://www.mis-algoritmos.com/content/view/12/26/">Y más</A> </LI></UL>ES 
+GRATIS, Descárgalo desde el botón a la derecha.</SPAN></DIV><![endif]-->
+<DIV class=webcontainer>
+<TABLE cellSpacing=0 cellPadding=0 width=780 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <OBJECT 
+      codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0 
+      height=88 width=780 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="movie" VALUE="templates/fv_business_blue/images/header_1.swf?ueberschrift=Mis Algoritmos"><PARAM NAME="quality" VALUE="high">
+                                    <embed 
+      src="templates/fv_business_blue/images/header_1.swf?ueberschrift=Mis 
+      Algoritmos" quality="high" 
+      pluginspage="http://www.macromedia.com/go/getflashplayer" 
+      type="application/x-shockwave-flash" width="780" height="88"></embed>      
+      </OBJECT></TD></TR>
+  <TR>
+    <TD class=table_top_content height=155>
+      <TABLE height=115 cellSpacing=0 cellPadding=0 width=728 align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=center height=40><SPAN class=body_outer><A 
+            href="http://woolas.blogspot.com/">WooOlas</A>... </SPAN></TD>
+          <TD vAlign=center align=right>
+            <UL id=mainlevel-nav>
+              <LI><A class=mainlevel-nav 
+              href="http://www.mis-algoritmos.com/diagramas-flujo.html">flowcharts</A>
+              <LI><A class=mainlevel-nav 
+              href="http://www.mis-algoritmos.com/">algorithm</A>
+              <LI><A class=mainlevel-nav 
+              href="http://www.mis-algoritmos.com/content/view/15/50/">compilers</A>
+              <LI><A class=mainlevel-nav 
+              href="http://www.mis-algoritmos.com/sabrosus">sabrosus</A>
+              <LI><A class=mainlevel-nav 
+              href="http://www.mis-algoritmos.com/foro">foro</A>
+              <LI><A class=mainlevel-nav 
+href="http://www.gliffy.com/">gliffy</A>
+              <LI><A class=mainlevel-nav 
+              href="http://www.visibone.com/">VisiBone</A></LI></UL></TD></TR>
+        <TR>
+          <TD colSpan=2>
+            <TABLE class=header_table height=115 cellSpacing=0 cellPadding=0 
+            width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD style="PADDING-LEFT: 10px" vAlign=center align=left>
+                  <OBJECT 
+                  codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0 
+                  height=95 width=319 
+                  classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="movie" VALUE="templates/fv_business_blue/images/header_2.swf?ueberschrift=Mis Algoritmos"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+                                                                                 
+                                           <embed 
+                  src="templates/fv_business_blue/images/header_2.swf?ueberschrift=Mis 
+                  Algoritmos" width="319" height="95" quality="high" 
+                  pluginspage="http://www.macromedia.com/go/getflashplayer" 
+                  type="application/x-shockwave-flash" 
+                  wmode="transparent"></embed>                  </OBJECT></TD>
+                <TD vAlign=top align=right>
+                  <TABLE style="MARGIN-TOP: 10px; MARGIN-RIGHT: 10px" height=95 
+                  cellSpacing=0 cellPadding=0 width=379>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top>
+                        <DIV 
+              class=newsflash_div></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=table_middle_content vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width=728 align=center border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top colSpan=2 height=5></TD></TR>
+        <TR>
+          <TD vAlign=top 
+          background="Creación y uso de una función definida por el usuario_archivos/tr_bg.gif" 
+          colSpan=2 height=25>&nbsp;Buscar: <INPUT id=q onkeyup=buscar()><INPUT onclick=buscar(); type=button value=Buscar><BR><INPUT 
+            id=tipo onclick=cambiartipo(this) type=radio CHECKED value=1 
+            name=tipo> Ejemplos en Pascal o Turbo C<BR><INPUT id=tipo 
+            onclick=cambiartipo(this) type=radio value=2 name=tipo> Diagramas de 
+            flujo<BR><INPUT id=tipo onclick=cambiartipo(this) type=radio value=3 
+            name=tipo> Ejemplos en JavaScript<BR><INPUT id=tipo 
+            onclick=cambiartipo(this) type=radio value=4 name=tipo> 
+            Blog<BR><INPUT id=tipo onclick=cambiartipo(this) type=radio value=5 
+            name=tipo> Funciones de C<BR><INPUT id=tipo 
+            onclick=cambiartipo(this) type=radio value=6 name=tipo> Funciones de 
+            Pascal 
+            <DIV id=tipobusqueda 
+            style="DISPLAY: none; POSITION: absolute">1</DIV>
+            <SCRIPT>
+				function cambiartipo(d){
+						document.getElementById('tipobusqueda').innerHTML=d.value;
+						buscar();
+					}
+            </SCRIPT>
+          </TD></TR>
+        <TR>
+          <TD vAlign=top colSpan=2 height=5></TD></TR>
+        <TR>
+          <TD style="PADDING-RIGHT: 20px; PADDING-TOP: 8px" vAlign=top><SPAN 
+            class=body_outer>
+            <DIV id=busqueda></DIV>
+            <DIV>
+            <SCRIPT language=javascript>
+<!--
+google_ad_client = "pub-2927372561163152";
+google_alternate_ad_url = "http://www.mis-algoritmos.com/mambots/content/google_adsense_script.html";
+google_ad_width = 468; 
+google_ad_height = 60; 
+google_ad_format = "468x60_as"; 
+google_ad_channel = ""; 
+google_ad_type = "text"; 
+google_color_border = "FFFFFF"; 
+google_color_bg = "FFFFFF"; 
+google_color_link = "000000"; 
+google_color_url = "53ADFF"; 
+google_color_text = "0080FF"; 
+//--> 
+</SCRIPT>
+
+            <SCRIPT language=javascript 
+            src="Creación y uso de una función definida por el usuario_archivos/show_ads.js"></SCRIPT>
+<!-- end of google ads --></DIV>
+            <SCRIPT 
+            src="Creación y uso de una función definida por el usuario_archivos/buscar_ajax.js"></SCRIPT>
+
+            <DIV class=ps_contenedor>
+            <DIV class=menu_titulo><SPAN id=menu_titulo>Lista de 
+            programas</SPAN></DIV>
+            <DIV class=bloque>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Verificación de las funciones matemáticas de la 
+            biblioteca<BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Verificación de las funciones matemáticas de la biblioteca" 
+            href="http://www.mis-algoritmos.com/source-417.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Verificación de las funciones matemáticas de la biblioteca" 
+            href="http://www.mis-algoritmos.com/run-417.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A 
+            title="Verificación de las funciones matemáticas de la biblioteca" 
+            href="http://www.mis-algoritmos.com/source-417.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Verificación de las funciones matemáticas de la biblioteca" 
+            href="http://www.mis-algoritmos.com/source-417.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Imprime caracteres introducidos desde el 
+            teclado<BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Imprime caracteres introducidos desde el teclado" 
+            href="http://www.mis-algoritmos.com/source-418.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Imprime caracteres introducidos desde el teclado" 
+            href="http://www.mis-algoritmos.com/run-418.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A 
+            title="Imprime caracteres introducidos desde el teclado" 
+            href="http://www.mis-algoritmos.com/source-418.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Imprime caracteres introducidos desde el teclado" 
+            href="http://www.mis-algoritmos.com/source-418.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Ejemplo 269<BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Ejemplo 269" 
+            href="http://www.mis-algoritmos.com/source-419.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A title="Ejemplo 269" 
+            href="http://www.mis-algoritmos.com/run-419.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Ejemplo 269" 
+            href="http://www.mis-algoritmos.com/source-419.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A title="Ejemplo 269" 
+            href="http://www.mis-algoritmos.com/source-419.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BACKGROUND-COLOR: #bbe0ff"><SPAN 
+            id=ps_asunto_s_a>Creación y uso de una función definida por el 
+            usuario<BR></SPAN><SPAN 
+            style="PADDING-LEFT: 20px; FONT-WEIGHT: bold">Codigo 
+            fuente<BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Creación y uso de una función definida por el usuario" 
+            style="COLOR: #0080ff" 
+            href="http://www.mis-algoritmos.com/run-420.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A 
+            title="Creación y uso de una función definida por el usuario" 
+            style="COLOR: #0080ff" 
+            href="http://www.mis-algoritmos.com/source-420.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Creación y uso de una función definida por el usuario" 
+            style="COLOR: #0080ff" 
+            href="http://www.mis-algoritmos.com/source-420.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Encuentra el máximo de tres enteros<BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Encuentra el máximo de tres enteros" 
+            href="http://www.mis-algoritmos.com/source-421.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Encuentra el máximo de tres enteros" 
+            href="http://www.mis-algoritmos.com/run-421.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Encuentra el máximo de tres enteros" 
+            href="http://www.mis-algoritmos.com/source-421.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Encuentra el máximo de tres enteros" 
+            href="http://www.mis-algoritmos.com/source-421.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Escala y cambio de enteros producidos por 1 + rand() 
+            % 6.<BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Escala y cambio de enteros producidos por 1 + rand() % 6." 
+            href="http://www.mis-algoritmos.com/source-422.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Escala y cambio de enteros producidos por 1 + rand() % 6." 
+            href="http://www.mis-algoritmos.com/run-422.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A 
+            title="Escala y cambio de enteros producidos por 1 + rand() % 6." 
+            href="http://www.mis-algoritmos.com/source-422.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Escala y cambio de enteros producidos por 1 + rand() % 6." 
+            href="http://www.mis-algoritmos.com/source-422.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Tiro de un dado de seis lados 6000 
+            veces<BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Tiro de un dado de seis lados 6000 veces" 
+            href="http://www.mis-algoritmos.com/source-423.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Tiro de un dado de seis lados 6000 veces" 
+            href="http://www.mis-algoritmos.com/run-423.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Tiro de un dado de seis lados 6000 veces" 
+            href="http://www.mis-algoritmos.com/source-423.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Tiro de un dado de seis lados 6000 veces" 
+            href="http://www.mis-algoritmos.com/source-423.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Randomización del programa de dados<BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Randomización del programa de dados" 
+            href="http://www.mis-algoritmos.com/source-424.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Randomización del programa de dados" 
+            href="http://www.mis-algoritmos.com/run-424.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Randomización del programa de dados" 
+            href="http://www.mis-algoritmos.com/source-424.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Randomización del programa de dados" 
+            href="http://www.mis-algoritmos.com/source-424.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Craps<BR></SPAN><SPAN id=menu_link_sub><A title=Craps 
+            href="http://www.mis-algoritmos.com/source-425.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A title=Craps 
+            href="http://www.mis-algoritmos.com/run-425.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title=Craps 
+            href="http://www.mis-algoritmos.com/source-425.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A title=Craps 
+            href="http://www.mis-algoritmos.com/source-425.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Ejemplo de alcance<BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Ejemplo de alcance" 
+            href="http://www.mis-algoritmos.com/source-426.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Ejemplo de alcance" 
+            href="http://www.mis-algoritmos.com/run-426.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Ejemplo de alcance" 
+            href="http://www.mis-algoritmos.com/source-426.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Ejemplo de alcance" 
+            href="http://www.mis-algoritmos.com/source-426.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Función recursiva del factorial<BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Función recursiva del factorial" 
+            href="http://www.mis-algoritmos.com/source-427.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Función recursiva del factorial" 
+            href="http://www.mis-algoritmos.com/run-427.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Función recursiva del factorial" 
+            href="http://www.mis-algoritmos.com/source-427.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Función recursiva del factorial" 
+            href="http://www.mis-algoritmos.com/source-427.txt">Version 
+            imprimible</A></SPAN></DIV>
+            <DIV class=ps_bloque 
+            style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><SPAN 
+            id=ps_asunto_s>Función recursiva de fibonacci<BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Función recursiva de fibonacci" 
+            href="http://www.mis-algoritmos.com/source-428.html">Codigo 
+            fuente</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Función recursiva de fibonacci" 
+            href="http://www.mis-algoritmos.com/run-428.html">Run</A><BR></SPAN><SPAN 
+            id=menu_link_sub><A title="Función recursiva de fibonacci" 
+            href="http://www.mis-algoritmos.com/source-428.pdf">Version 
+            pdf</A><BR></SPAN><SPAN id=menu_link_sub><A 
+            title="Función recursiva de fibonacci" 
+            href="http://www.mis-algoritmos.com/source-428.txt">Version 
+            imprimible</A></SPAN></DIV></DIV></DIV>
+            <DIV class=ps_titulo><SPAN id=ps_tema>C</SPAN></DIV>
+            <DIV class=ps_tema><SPAN id=ps_titulo>Funciones en C</SPAN></DIV>
+            <DIV class=ps_asunto>Creación y uso de una función definida por el 
+            usuario</DIV><SPAN id=source>
+            <DIV><SPAN style="COLOR: #339933">#include 
+            &lt;stdio.h&gt;</SPAN><BR><BR><A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/int"><SPAN 
+            style="COLOR: #993333">int</SPAN></A> cuadrado<SPAN 
+            style="COLOR: #66cc66">(</SPAN> <A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/int"><SPAN 
+            style="COLOR: #993333">int</SPAN></A> y <SPAN 
+            style="COLOR: #66cc66">)</SPAN>; <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* prototipo de la 
+            funci󮠪/</SPAN><BR><BR><SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* la funci󮠭ain comienza 
+            la ejecuci󮠤el programa */</SPAN><BR><A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/int"><SPAN 
+            style="COLOR: #993333">int</SPAN></A> main<SPAN 
+            style="COLOR: #66cc66">(</SPAN><SPAN 
+            style="COLOR: #66cc66">)</SPAN><BR><SPAN 
+            style="COLOR: #66cc66">{</SPAN><BR>&nbsp; &nbsp;<A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/int"><SPAN 
+            style="COLOR: #993333">int</SPAN></A> x; <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* contador 
+            */</SPAN><BR><BR>&nbsp; &nbsp;<SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* repite 10 veces el 
+            ciclo y calcula e imprime cada vez el cuadrado de x 
+            */</SPAN><BR>&nbsp; &nbsp;<A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/for"><SPAN 
+            style="COLOR: #b1b100">for</SPAN></A> <SPAN 
+            style="COLOR: #66cc66">(</SPAN> x = <SPAN 
+            style="COLOR: #cc66cc">1</SPAN>; x &lt;= <SPAN 
+            style="COLOR: #cc66cc">10</SPAN>; x++ <SPAN 
+            style="COLOR: #66cc66">)</SPAN> <SPAN 
+            style="COLOR: #66cc66">{</SPAN><BR>&nbsp; &nbsp; &nbsp; <A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/printf"><SPAN 
+            style="COLOR: #000066">printf</SPAN></A><SPAN 
+            style="COLOR: #66cc66">(</SPAN> <SPAN 
+            style="COLOR: #ff0000">"%d&nbsp; "</SPAN>, cuadrado<SPAN 
+            style="COLOR: #66cc66">(</SPAN> x <SPAN 
+            style="COLOR: #66cc66">)</SPAN> <SPAN 
+            style="COLOR: #66cc66">)</SPAN>; <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* llamada a la 
+            funci󮠪/</SPAN><BR>&nbsp; &nbsp;<SPAN 
+            style="COLOR: #66cc66">}</SPAN> <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* fin de for 
+            */</SPAN><BR><BR>&nbsp; &nbsp;<A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/printf"><SPAN 
+            style="COLOR: #000066">printf</SPAN></A><SPAN 
+            style="COLOR: #66cc66">(</SPAN> <SPAN style="COLOR: #ff0000">"<SPAN 
+            style="FONT-WEIGHT: bold; COLOR: #000099">\n</SPAN>"</SPAN> <SPAN 
+            style="COLOR: #66cc66">)</SPAN>;<BR><BR>&nbsp; &nbsp;<A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/return"><SPAN 
+            style="COLOR: #b1b100">return</SPAN></A> <SPAN 
+            style="COLOR: #cc66cc">0</SPAN>; <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* indica 
+            terminaci󮠥xitosa */</SPAN><BR><BR><SPAN 
+            style="COLOR: #66cc66">}</SPAN> <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* fin de main 
+            */</SPAN><BR><BR><SPAN style="COLOR: #808080; FONT-STYLE: italic">/* 
+            definici󮠤e la funci󮠣uadrado, devuelve el cuadrado del par᭥tro 
+            */</SPAN><BR><A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/int"><SPAN 
+            style="COLOR: #993333">int</SPAN></A> cuadrado<SPAN 
+            style="COLOR: #66cc66">(</SPAN> <A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/int"><SPAN 
+            style="COLOR: #993333">int</SPAN></A> y <SPAN 
+            style="COLOR: #66cc66">)</SPAN> <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* y es una copia del 
+            argumento para la funci󮠪/</SPAN><BR><SPAN 
+            style="COLOR: #66cc66">{</SPAN><BR>&nbsp; &nbsp;<A 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/return"><SPAN 
+            style="COLOR: #b1b100">return</SPAN></A> y * y; <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* devuelve el cuadrado 
+            de y como un int */</SPAN><BR><BR><SPAN 
+            style="COLOR: #66cc66">}</SPAN> <SPAN 
+            style="COLOR: #808080; FONT-STYLE: italic">/* fin de la 
+            funci󮠣uadrado */</SPAN></DIV></SPAN></SPAN>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD style="PADDING-RIGHT: 10px" vAlign=top width="50%"><SPAN 
+                  class=body_outer><SPAN class=user1_inner></SPAN></SPAN></TD>
+                <TD vAlign=top width="50%"><SPAN class=body_outer><SPAN 
+                  class=user1_inner></SPAN></SPAN></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top width=180 bgColor=#eeeeee>
+            <TABLE cellSpacing=0 cellPadding=0 width=160 align=center 
+              border=0><TBODY>
+              <TR>
+                <TD>
+                  <DIV class=moduletable>
+                  <H3>Menu de Navegación </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel id=active_menu 
+                        href="http://www.mis-algoritmos.com/content/blogsection/0/9/">Pagina 
+                        principal</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/content/view/12/26/">Firefox 
+                        mejor que IE</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable></DIV>
+                  <DIV class=moduletable>
+                  <H3>Registrados </H3>
+                  <FORM id=mod_loginform style="MARGIN: 0px" 
+                  action=http://www.mis-algoritmos.com/component/option,com_comprofiler/task,login/ 
+                  method=post>
+                  <TABLE class=mod_login style="align: center" cellSpacing=0 
+                  cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><SPAN id=mod_login_usernametext><LABEL 
+                        for=mod_login_username>Username</LABEL></SPAN><BR><INPUT 
+                        class=inputbox id=mod_login_username size=10 
+                        name=username><BR><SPAN id=mod_login_passwordtext><LABEL 
+                        for=mod_login_password>Password</LABEL></SPAN><BR><INPUT 
+                        class=inputbox id=mod_login_password type=password 
+                        size=10 name=passwd><BR><INPUT type=hidden value=login 
+                        name=op2> <INPUT type=hidden value=english name=lang> 
+                        <INPUT type=hidden 
+                        value=http://www.mis-algoritmos.com/source-420.html 
+                        name=return> <INPUT type=hidden value=0 name=message> 
+                        <INPUT type=hidden value=yes name=remember><INPUT class=button type=submit value=Login name=Submit></TD></TR>
+                    <TR>
+                      <TD><A class=mod_login 
+                        href="http://www.mis-algoritmos.com/component/option,com_comprofiler/task,lostPassword/">Lost 
+                        Password?</A></TD></TR>
+                    <TR>
+                      <TD>No account yet? <A class=mod_login 
+                        href="http://www.mis-algoritmos.com/component/option,com_comprofiler/task,registers/">Register</A></TD></TR></TBODY></TABLE></FORM></DIV>
+                  <DIV class=moduletable>
+                  <H3>Problemas solucionados </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-10.html">C</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-2.html">Mas 
+                        de C</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-9.html">Free 
+                        Pascal</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-8.html">Turbo 
+                        C (mas)</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-6.html">Turbo 
+                        C (varios)</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-1.html">Turbo 
+                        Pascal</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-5.html">Turbo 
+                        Pascal (varios)</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-3.html">Visual 
+                        Basic 6</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/indice-7.html">Visual 
+                        Basic NET</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable>
+                  <H3>Referencia del lenguaje </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/c.librerias.html">Librerias 
+                        Turbo C</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/pascal.librerias.html">Librerias 
+                        Turbo Pascal</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable>
+                  <H3>Mas ejemplos </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/javascript.ejemplos.html">Ejemplos 
+                        en Java Script</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/diagramas-flujo.html">Diagramas 
+                        de flujo</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable>
+                  <H3>Documentacion </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/documentacion.html">Documentacion 
+                        General</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/content/view/14/49/">Teleproceso</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/content/view/16/51/">Manual 
+                        de C</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/content/view/655/69/">Como 
+                        crear diagramas de flujo</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable>
+                  <H3>Comunidad </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/foro/">Foro de 
+                        discusión</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://groups.msn.com/Algoritmia/">Comunidad de 
+                        MSN</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable>
+                  <H3>Sitios interesantes </H3>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.pecesama.net/">Pedro Santana</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.pecesama.net/lc">Lógica 
+                        Computacional</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.therror.com/">Therror</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.algoritmia.net/">Algoritmia 
+                    NET</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.buayacorp.com/">BuayaCorp</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.apuntesinformatica.com/">Apuntes 
+                        Informatica</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.algoritmosexual.cjb.net/">Algoritmo 
+                        Sexual</A></TD></TR>
+                    <TR align=left>
+                      <TD><A class=mainlevel 
+                        href="http://www.mis-algoritmos.com/sabrosus/">sabrosus</A></TD></TR></TBODY></TABLE></DIV>
+                  <DIV class=moduletable>
+                  <H3>Algoritmia </H3>
+                  <DIV class=menu_titulo><SPAN>
+                  <DIV class=menu_titulo><SPAN id=menu_titulo><A 
+                  title=Algoritmos 
+                  href="http://spaces.msn.com/Algoritmia">Algoritmia</A></SPAN></DIV>
+                  <DIV class=menu_link 
+                  style="PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px">
+                  <FORM style="MARGIN: 0px" 
+                  action=http://groups.msn.com/Algoritmia/_joinpromote.msnw 
+                  method=post><INPUT type=hidden name=commurl> <INPUT 
+                  class=input_text size=17 name=emailids><BR><INPUT class=input_submit type=submit value=Suscribirme></FORM></DIV>
+                  <DIV class=menu_titulo><SPAN id=menu_titulo><FONT size=4>Grupo 
+                  de </FONT><A title="Grupos de msn" 
+                  href="http://www.mis-algoritmos.com/sabrosus/tag/msn"><FONT 
+                  size=4>msn</FONT></A></SPAN></DIV></SPAN></DIV></DIV>
+                  <DIV class=moduletable>
+                  <P align=center><IMG alt="Creative Commons License" 
+                  src="Creación y uso de una función definida por el usuario_archivos/somerights20.png" 
+                  border=0><!--/Creative Commons License--></P></DIV><SPAN 
+                  style="PADDING-LEFT: 10px"></SPAN></TD></TR></TBODY></TABLE></TD></TR>
+        <TR height=10>
+          <TD></TD></TR>
+        <TR>
+          <TD style="BORDER-TOP: #cccccc 1px dotted; FONT-SIZE: 9px" 
+          vAlign=bottom align=middle colSpan=2><SPAN 
+            class=user1_inner></SPAN><A title=Algoritmos 
+            href="http://www.mis-algoritmos.com/sabrosus/tag/algoritmos">Mis 
+            Algoritmos</A> (<A title="Mis Algoritmos" 
+            href="http://spaces.msn.com/vyk1/Blog/cns!1pou_4owAWa63U5BSf_4INDg!146.entry">Acerca 
+            de</A>) - <A title=Victor 
+            href="http://spaces.msn.com/vyk1">Victor</A> <A 
+            title="El rey del mundo" 
+            href="http://spaces.msn.com/elreydelmundo-jeje">De la Rocha</A> <!-- 	ENDE / END	--></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD class=table_bottom_content></TD></TR>
+  <TR>
+    <TD align=middle><BR></TD></TR></TBODY></TABLE>
+<P align=center><SPAN 
+class=seitencontainer></SPAN></P></DIV><!-- 1152066279 --></BODY></HTML>

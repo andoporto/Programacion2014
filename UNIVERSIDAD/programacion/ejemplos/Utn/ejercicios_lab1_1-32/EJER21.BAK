@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+
+void main()
+{
+	int c, x, y, z, w;
+	clrscr();
+	textcolor(RED);
+	gotoxy(1,2);
+	cprintf("Los numeros primos comprendidos entre 0 y 100 son:");
+	gotoxy(1,6);
+	for ( c = 0; c<=100; c++)
+	{
+		x = c % 2;
+		y = c % 3;
+		z = c % 4;
+		w = c % 5;
+		if ( x != 0 && y != 0 && z !=0 && w !=0 )
+		{
+			cprintf("*%d", c);
+		}
+	}
+	gotoxy(1,24);
+	printf("Presione una tecla para salir");
+	getch();
+}

@@ -1,0 +1,189 @@
+BODY {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; MARGIN: auto; COLOR: #333333; FONT-FAMILY: "Trebuchet MS", Vendana, Arial, sans-serif; BACKGROUND-COLOR: #f7f7f7
+}
+#contenido {
+	WIDTH: 800px; TEXT-ALIGN: left
+}
+.contenido {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: justify
+}
+.dashed {
+	BORDER-BOTTOM: #000000 1px dashed
+}
+.logo {
+	TEXT-ALIGN: center
+}
+.header {
+	PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #ff0000 1px solid; BACKGROUND-COLOR: #000000; TEXT-ALIGN: center
+}
+.footer {
+	BORDER-TOP: #cccccc 1px solid; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 0px; WIDTH: 100%; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: right
+}
+#footer {
+	
+}
+#slogan {
+	WIDTH: 400px; TEXT-ALIGN: center
+}
+.slogan {
+	COLOR: #f7f7f7; FONT-FAMILY: "Trebuchet MS", Vendana, Arial, sans-serif
+}
+#arrow1 {
+	FONT-WEIGHT: bold; COLOR: #ffff00
+}
+#menu {
+	BORDER-RIGHT: #ffffff 4px solid; BORDER-TOP: #ffffff 4px solid; FLOAT: left; MARGIN: 0px 5px 5px 0px; BORDER-LEFT: #ffffff 4px solid; WIDTH: 159px; BORDER-BOTTOM: #ffffff 4px solid; BACKGROUND-COLOR: #fbfdff
+}
+.nav {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND-IMAGE: url(images/link_background.jpg); PADDING-BOTTOM: 5px; PADDING-TOP: 5px; HEIGHT: 20px; TEXT-ALIGN: center
+}
+.nav_link_a {
+	FONT: 10px/20px georgia, "times new roman", serif; MARGIN-LEFT: 5px; COLOR: #000000; MARGIN-RIGHT: 5px
+}
+.nav_link A {
+	FONT: 10px/20px tahoma; MARGIN-LEFT: 5px; COLOR: #333333; MARGIN-RIGHT: 5px
+}
+.nav_link A:hover {
+	FONT: 10px/20px tahoma; MARGIN-LEFT: 5px; COLOR: #777777; MARGIN-RIGHT: 5px
+}
+.nav_link A:active {
+	FONT: 10px/20px tahoma; MARGIN-LEFT: 5px; COLOR: #999900; MARGIN-RIGHT: 5px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.menu_titulo_general {
+	TEXT-ALIGN: center
+}
+.menu_titulo {
+	TEXT-ALIGN: center
+}
+#menu_titulo {
+	FONT-WEIGHT: bold
+}
+.menu_link {
+	BACKGROUND-COLOR: #ddf0ff
+}
+#menu_link {
+	PADDING-LEFT: 3px; COLOR: #0080ff
+}
+#menu_link_sub {
+	PADDING-LEFT: 10px; BORDER-LEFT: #f7f7f7 1px solid
+}
+#menu_link_sub A:hover {
+	PADDING-LEFT: 3px; COLOR: #999900
+}
+#menu_link_sub_bloque {
+	BACKGROUND-COLOR: #f2faff
+}
+#menu_link A:hover {
+	COLOR: #999900
+}
+.bloque {
+	MARGIN-BOTTOM: 5px
+}
+A {
+	COLOR: #004d8a; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #464646
+}
+INPUT {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; COLOR: #2f4165; BORDER-BOTTOM: #ccc 1px solid
+}
+TEXTAREA {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; FONT-SIZE: 13pt; MARGIN-BOTTOM: 10px; BORDER-LEFT: #ccc 1px solid; COLOR: #2f4165; BORDER-BOTTOM: #ccc 1px solid; FONT-FAMILY: georgia, "times new roman", serif
+}
+.ps_titulo {
+	BACKGROUND-COLOR: #fbfbfb; TEXT-ALIGN: center
+}
+#ps_titulo {
+	FONT: 30px/40px tahoma
+}
+.ps_tema {
+	BACKGROUND-COLOR: #fcfcfc; TEXT-ALIGN: center
+}
+#ps_tema {
+	FONT: bold 14px/20px tahoma
+}
+.ps_bloque {
+	BORDER-RIGHT: #cae4ff 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #cae4ff 1px solid; PADDING-LEFT: 3px; MARGIN-BOTTOM: 10px; BORDER-LEFT: #cae4ff 1px solid; BORDER-BOTTOM: #cae4ff 1px solid; BACKGROUND-COLOR: #f2f9ff
+}
+#ps_bloque A {
+	COLOR: #0080ff
+}
+#ps_bloque {
+	FONT: 11px/15px tahoma
+}
+.ps_asunto {
+	FONT: bold 18px/30px tahoma; COLOR: #0080ff; TEXT-ALIGN: center
+}
+.ps_contenedor {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px; FONT: 11px/13px "Trebuchet MS"; WIDTH: 150px; PADDING-TOP: 0px; BACKGROUND-COLOR: #f7f7f7
+}
+#ps_asunto_s_a {
+	FONT: 11px/15px tahoma; COLOR: #ff2d2d
+}
+#ps_asunto_s {
+	FONT: 11px/15px tahoma; COLOR: #330055
+}
+#source {
+	FONT: 11px/13px tahoma
+}
+.run {
+	BACKGROUND-COLOR: #000000
+}
+#f_link A {
+	COLOR: #444444
+}
+#f_link A:hover {
+	COLOR: #8464a4
+}
+#f_link A:visited {
+	COLOR: #ec84fb
+}
+#f_bloque {
+	BORDER-RIGHT: #bfbfbf 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #bfbfbf 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px; BORDER-LEFT: #bfbfbf 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #bfbfbf 1px solid; BACKGROUND-COLOR: #f7f7f7
+}
+.js_bloque {
+	PADDING-RIGHT: 3px; MARGIN-TOP: 5px; PADDING-LEFT: 3px; MARGIN-BOTTOM: 20px; BACKGROUND-COLOR: #f0f8ff
+}
+.add_bookmarklet {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-TOP: 2px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+#add_bookmarklet {
+	FONT: 13px/15px tahoma
+}
+.add_bookmarklet IMG {
+	WIDTH: 15px; HEIGHT: 15px
+}
+.add_bookmarklet #articulo {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 8px; COLOR: #3c3c3c; BACKGROUND-COLOR: #f0f0f0
+}
+.hosting {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; PADDING-BOTTOM: 20px; FONT: 16px/20px tahoma; PADDING-TOP: 20px; TEXT-ALIGN: center
+}
+.spiffy {
+	DISPLAY: block
+}
+.spiffy  {
+	DISPLAY: block; BACKGROUND: #ddf0ff; OVERFLOW: hidden; HEIGHT: 1px
+}
+.spiffy1 {
+	BORDER-RIGHT: #f0f8ff 1px solid; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #e5f3ff; MARGIN-LEFT: 3px; BORDER-LEFT: #f0f8ff 1px solid; MARGIN-RIGHT: 3px
+}
+.spiffy2 {
+	BORDER-RIGHT: #fbfdff 1px solid; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BACKGROUND: #e3f2ff; PADDING-BOTTOM: 0px; MARGIN: 0px 1px; BORDER-LEFT: #fbfdff 1px solid; PADDING-TOP: 0px
+}
+.spiffy3 {
+	BORDER-RIGHT: #e3f2ff 1px solid; MARGIN: 0px 1px; BORDER-LEFT: #e3f2ff 1px solid
+}
+.spiffy4 {
+	BORDER-RIGHT: #f0f8ff 1px solid; BORDER-LEFT: #f0f8ff 1px solid
+}
+.spiffy5 {
+	BORDER-RIGHT: #e5f3ff 1px solid; BORDER-LEFT: #e5f3ff 1px solid
+}
+.spiffy_content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: #ddf0ff; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}

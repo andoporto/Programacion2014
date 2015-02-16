@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<dos.h>
+#include<conio.h>
+
+void main()
+{
+clrscr();
+int i,j,k,l;
+lowvideo();
+		for(i=1;i<=40;i++)
+			{
+			for(j=1;j<=24;j++)
+			{
+			gotoxy(i,j);
+			cprintf("*");
+			delay(3);
+			}
+		}
+		for(i=80;i>=41;i--)
+			{
+			for(j=1;j<=24;j++)
+			{
+			gotoxy(i,j);
+			cprintf("*");
+			delay(3);
+			}
+		}
+highvideo();
+		for(i=1;i<=40;i++)
+			{
+			for(j=1;j<=24;j++)
+			{
+			gotoxy(i,j);
+			cprintf("*");
+			delay(3);
+			}
+		}
+		for(i=80;i>=41;i--)
+			{
+			for(j=1;j<=24;j++)
+			{
+			gotoxy(i,j);
+			cprintf("*");
+			delay(3);
+			}
+		}
+for(k=1;k<=16;k++)
+{
+textcolor(k);
+  for(l=1;l<=16;l++)
+		{
+		textbackground(l);
+		for(i=1;i<=40;i++)
+			{
+			for(j=1;j<=24;j++)
+			{
+			gotoxy(i,j);
+			cprintf("*");
+			delay(3);
+			}
+		}
+		for(i=80;i>=41;i--)
+			{
+			for(j=1;j<=24;j++)
+			{
+			gotoxy(i,j);
+			cprintf("*");
+			delay(3);
+			}
+		}
+}
+}
+	getch();
+}
