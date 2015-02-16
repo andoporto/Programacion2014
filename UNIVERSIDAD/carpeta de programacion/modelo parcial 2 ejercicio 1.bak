@@ -1,0 +1,53 @@
+# include <stdio.h>
+# include <conio.h>
+# include <stdlib.h>
+struct cliente{ // DECLARACIÓN DE TIPO DE DATO CLIENTE.
+                     int nc;                   // número de cuenta
+                     char rz [29];         // razón social
+                     float cm;              // crédito máximo
+                     float sal;              // saldo
+                     } ;
+void main (void)
+{
+struct cliente cl; // cliente cl DECLARACION DE VARIABLE cl DEL TIPO DATO cliente FILE *pf; // PUNTERO AL ARCHIVO.
+FILE*pf;                                                       // APERTURA DEL ARCHIVO PARA GRABACIÓN.
+pf = fopen  ("SALDOS.DAT ","wb") ;
+if (pf == NULL)                                // COMPROBACIÓN DEL ACCESO.
+{
+ printf ( " NO SE PUEDE ACCEDER" ) ;
+getch ( ) ;        exit (1) ;        }
+printf (" \ nINGRESAR NUMERO DE CUENTA  :  " ) ;
+scanf ( "%d",&cl . nc) ;
+while ( cl .nc)
+{
+fflush ( stdin) ;
+printf ( "  \ nINGRESAR RAZON SOCIAL   :  " ) ;
+gets ( cl . rz ) ;
+printf ( "  \ nINGRESAR  CREDITO MAXIMO   :  " ) ;
+scanf ( " %f ",&cl . cm) ;
+printf ( " \  nINGRESAR  SALDO  :  " ) ;
+scanf ( " % f " , &cl . sal ) ;
+fwrite ( &cl , sizeof ( cliente) ,1, pf ) ;    // GRABACIÓN ( DE LOGICA A FISICO)
+printf  ( " \  nINGRESAR  NUMERO DE CUENTA  :  " ) ;
+scanf  ( " % d " , &cl . nc) ;
+}
+fclose  (pf) ;       // CIERRE DEL ARCHIVO
+
+// COMPROBACION DE QUE EL ARCHIVO ESTA BIEN GENERADO - LECTURA-
+pf = fopen (  "SALDOS . DAT" , " rb" ) ;
+if ( pf == NULL)                                // COMPROBACION DEL ACCESO
+{
+printf ( " NO SE PUEDE ACCEDER " ) ;
+getch () ;
+exit (1);
+}
+printf ( "NRO. CUENTA   RAZON SOCIAL  CREDITO MAXIMO   SALDO " ) ;
+ fread ( &cl , sizeof (cliente) ,1, pf) ;                 // LECTURA ( FISICO A LOGICA)
+while ( ¡ feof (pf) )                // MIENTRAS NO SEA FIN DE ARCHIVO, SE LEE
+{
+printf  ("  \ n  %d                  %s     %f    %f " , cl . nc , cl. Rz , cl. cm , cl . sal ) ;
+fread ( &cl , sizeof ( cliente) , 1, pf ) ;                 // LECTURA ( FISICO LOGICA )
+}
+fclose ( pf ) ;
+getch ( ) ;
+}

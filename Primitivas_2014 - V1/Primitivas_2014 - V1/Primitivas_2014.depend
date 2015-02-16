@@ -1,0 +1,90 @@
+# depslib dependency file v1.0
+1400025489 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\fechas.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	"fechas.h"
+
+1400025395 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\fechas.h
+
+1402097722 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fechas.h"
+	"estructuras.h"
+	"pila.h"
+	"varios.h"
+	"mem_dinamica.h"
+	"pila_dinam.h"
+	"cola.h"
+	"cola_dinamica.h"
+	"lista_dinam.h"
+
+1400633174 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\pila.c
+	"pila.h"
+	"estructuras.h"
+	<stdio.h>
+	<stdlib.h>
+
+1400633188 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\pila.h
+	"estructuras.h"
+
+1402093013 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\estructuras.h
+
+1401495906 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\varios.h
+	"pila.h"
+	"estructuras.h"
+
+1401496368 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\varios.c
+	"varios.h"
+	<stdio.h>
+	<stdlib.h>
+
+1401487630 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\mem_dinamica.c
+	"mem_dinamica.h"
+	"estructuras.h"
+	<stdio.h>
+	<stdlib.h>
+
+1401239017 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\mem_dinamica.h
+	<stdlib.h>
+	<stdio.h>
+	"estructuras.h"
+
+1401235626 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\cola.c
+	"cola.h"
+	"estructuras.h"
+	<stdio.h>
+	<stdlib.h>
+
+1400945659 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\cola.h
+	"estructuras.h"
+
+1401755807 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\pila_dinam.h
+	"estructuras.h"
+
+1401831516 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\pila_dinam.c
+	"pila_dinam.h"
+	"estructuras.h"
+	<stdio.h>
+	<stdlib.h>
+
+1402437771 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\cola_dinamica.c
+	"cola_dinamica.h"
+	"estructuras.h"
+	<stdio.h>
+	<stdlib.h>
+
+1401843840 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\cola_dinamica.h
+	"estructuras.h"
+
+1402097557 source:c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\lista_dinam.c
+	"lista_dinam.h"
+	"estructuras.h"
+	<stdio.h>
+	<stdlib.h>
+
+1401842569 c:\users\juliano\dropbox\codeblocksproject_2014\primitivas_2014\lista_dinam.h
+	"estructuras.h"
+
